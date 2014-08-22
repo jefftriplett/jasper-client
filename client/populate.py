@@ -1,8 +1,9 @@
-import re
-from getpass import getpass
-import yaml
-from pytz import timezone
 import feedparser
+import re
+import yaml
+
+from getpass import getpass
+from pytz import timezone
 
 
 def run():
@@ -107,6 +108,7 @@ def run():
     outputFile = open("profile.yml", "w")
     yaml.dump(profile, outputFile, default_flow_style=False)
     print("Done.")
+
 
 if __name__ == "__main__":
     run()

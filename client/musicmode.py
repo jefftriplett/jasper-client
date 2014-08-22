@@ -3,14 +3,16 @@
 """
 
 import os
-from mic import Mic
+
 import g2p
-from music import *
 import speaker
 import stt
 
+from mic import Mic
+from music import *
 
-class MusicMode:
+
+class MusicMode(object):
 
     def __init__(self, PERSONA, mic):
         self.persona = PERSONA
@@ -146,6 +148,7 @@ class MusicMode:
                 else:
                     self.mic.say("Pardon?")
                     self.music.play()
+
 
 if __name__ == "__main__":
     """

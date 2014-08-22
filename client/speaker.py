@@ -9,7 +9,8 @@ Speaker methods:
 import os
 import json
 
-class eSpeakSpeaker:
+
+class eSpeakSpeaker(object):
     """
     Uses the eSpeak speech synthesizer included in the Jasper disk image
     """
@@ -24,25 +25,29 @@ class eSpeakSpeaker:
     def play(self, filename):
         os.system("aplay -D hw:1,0 " + filename)
 
-class saySpeaker:
+
+class saySpeaker(object):
     """
     Uses the OS X built-in 'say' command
     """
 
     @classmethod
     def isAvailable(cls):
-        return os.system("which say") == 0
+        can_speak = os.system("which afplay") == 0
+        can_play = os.system("which say") == 0
+        return can_play and can_speak
 
     def shellquote(self, s):
         return "'" + s.replace("'", "'\\''") + "'"
 
     def say(self, phrase):
-        os.system("say " + self.shellquote(phrase))
+        os.system("say -v Allison " + self.shellquote(phrase))
 
     def play(self, filename):
         os.system("afplay " + filename)
 
-def newSpeaker():
+
+def newSpeaker(object):
     """
     Returns:
         A speaker implementation available on the current platform

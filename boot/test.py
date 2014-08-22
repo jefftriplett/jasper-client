@@ -1,20 +1,14 @@
 import os
+import unittest
+
+import g2p
+import vocabcompiler
+
+from mock import patch
+
 
 if os.environ.get('JASPER_HOME') is None:
     os.environ['JASPER_HOME'] = '/home/pi'
-
-import sys
-import unittest
-from mock import patch
-import vocabcompiler
-
-#lib_path = os.path.abspath('../client')
-#mod_path = os.path.abspath('../client/modules/')
-
-#sys.path.append(lib_path)
-#sys.path.append(mod_path)
-
-import g2p
 
 
 class UnorderedList(list):

@@ -1,7 +1,10 @@
-import Queue
-from modules import Gmail
-from apscheduler.scheduler import Scheduler
 import logging
+import Queue
+
+from apscheduler.scheduler import Scheduler
+from modules import Gmail
+
+
 logging.basicConfig()
 
 

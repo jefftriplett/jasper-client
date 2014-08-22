@@ -1,7 +1,9 @@
-import yaml
 import sys
+import yaml
+
 import speaker
 import stt
+
 from conversation import Conversation
 
 
@@ -12,6 +14,7 @@ if isLocal():
     from local_mic import Mic
 else:
     from mic import Mic
+
 
 if __name__ == "__main__":
 

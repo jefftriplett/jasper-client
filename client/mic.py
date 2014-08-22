@@ -3,13 +3,15 @@
 """
 
 import os
-from wave import open as open_audio
-import audioop
 import pyaudio
+
 import alteration
+import audioop
+
+from wave import open as open_audio
 
 
-class Mic:
+class Mic(object):
 
     speechRec = None
     speechRec_persona = None

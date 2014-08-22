@@ -1,17 +1,18 @@
+import argparse
 import os
+import unittest
+import yaml
+
+import brain
+import g2p
+import test_mic
+
+from mock import patch
+from urllib2 import URLError, urlopen
+
 
 if os.environ.get('JASPER_HOME') is None:
     os.environ['JASPER_HOME'] = '/home/pi'
-
-import unittest
-import argparse
-from mock import patch
-from urllib2 import URLError, urlopen
-import yaml
-import test_mic
-import g2p
-import brain
-import speaker
 
 
 def activeInternet():

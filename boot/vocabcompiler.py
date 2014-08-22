@@ -3,14 +3,7 @@
 """
 
 import os
-import sys
 import glob
-
-lib_path = os.path.abspath('../client')
-mod_path = os.path.abspath('../client/modules/')
-
-sys.path.append(lib_path)
-sys.path.append(mod_path)
 
 import g2p
 

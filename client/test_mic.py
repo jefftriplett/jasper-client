@@ -5,7 +5,7 @@ outputs for inspection. Requires a populated profile (profile.yml).
 """
 
 
-class Mic:
+class Mic(object):
 
     def __init__(self, inputs):
         self.inputs = inputs

@@ -1,5 +1,6 @@
-import re
 import difflib
+import re
+
 from mpd import MPDClient
 
 
@@ -28,7 +29,7 @@ def reconnect(func, *default_args, **default_kwargs):
     return wrap
 
 
-class Song:
+class Song(object):
 
     def __init__(self, id, title, artist, album):
 
@@ -38,7 +39,7 @@ class Song:
         self.album = album
 
 
-class Music:
+class Music(object):
 
     client = None
     songs = []  # may have duplicates
@@ -234,6 +235,7 @@ class Music:
         lookup = {n.upper(): n for n in self.playlists}
         results = [lookup[r] for r in difflib.get_close_matches(query, lookup)]
         return results
+
 
 if __name__ == "__main__":
     """
