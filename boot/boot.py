@@ -7,8 +7,8 @@ import sys
 import vocabcompiler
 import traceback
 
-lib_path = os.path.abspath('../client')
-sys.path.append(lib_path)
+#lib_path = os.path.abspath('../client')
+#sys.path.append(lib_path)
 
 import speaker as speak
 speaker = speak.newSpeaker()
